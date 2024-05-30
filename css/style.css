@@ -1,0 +1,56 @@
+:root {
+  --DarkGrayishMagenta: hsl(303, 10%, 53%);
+  --LightGrayishMagenta: hsl(300, 24%, 96%);
+  --White: hsl(0, 0%, 100%);
+  --VeryDarkMagenta: hsl(300, 43%, 22%);
+  --SoftPink: hsl(333, 80%, 67%);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+body {
+  font-size: 15px;
+  font-family: "League Spartan", sans-serif;
+}
+.flex {
+  display: flex;
+}
+.social-row {
+  flex-direction: column;
+}
+/* typography */
+.title {
+  font-size: 2.75rem;
+}
+.title,
+.rating-item--text {
+  color: var(--VeryDarkMagenta);
+  font-weight: 700;
+}
+.user-name {
+  font-weight: 700;
+  color: var(--White);
+}
+.user-status {
+  color: var(--SoftPink);
+}
+/* layout styles */
+.social-container {
+  margin: 4rem 1.5rem;
+}
+.social-row--desc {
+  text-align: center;
+}
+/* gernal card */
+.profile-card {
+  background-color: var(--VeryDarkMagenta);
+  color: var(--DarkGrayishMagenta);
+  padding: 2rem;
+  border-radius: 0.5rem;
+}
