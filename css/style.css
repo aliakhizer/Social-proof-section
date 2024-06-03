@@ -1,6 +1,7 @@
 :root {
-  --DarkGrayishMagenta: hsl(303, 10%, 53%);
-  --LightGrayishMagenta: hsl(300, 24%, 96%);
+  --DarkGrayishMagenta: hsla(303, 10%, 53%);
+  --DarkGrayishMagentaOpacity: hsla(303, 10%, 53%, 0.2);
+  --LightGrayishMagenta: hsl(300, 2%, 53%);
   --White: hsl(0, 0%, 100%);
   --VeryDarkMagenta: hsl(300, 43%, 22%);
   --SoftPink: hsl(333, 80%, 67%);
@@ -17,6 +18,7 @@ img {
 body {
   font-size: 15px;
   font-family: "League Spartan", sans-serif;
+  color: var(--LightGrayishMagenta);
 }
 .flex {
   display: flex;
@@ -24,14 +26,24 @@ body {
 .social-row {
   flex-direction: column;
 }
+.social-row--desc {
+  text-align: center;
+}
 /* typography */
 .title {
   font-size: 2.75rem;
+  margin-bottom: 1rem;
 }
 .title,
 .rating-item--text {
   color: var(--VeryDarkMagenta);
   font-weight: 700;
+}
+.user-profile-desc {
+  color: white;
+}
+.desc {
+  line-height: 1.3rem;
 }
 .user-name {
   font-weight: 700;
@@ -44,13 +56,106 @@ body {
 .social-container {
   margin: 4rem 1.5rem;
 }
-.social-row--desc {
+
+.rating {
   text-align: center;
+  margin: 2rem 0;
 }
+.rating > * + * {
+  margin-top: 1rem;
+}
+.rating-item {
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: var(--DarkGrayishMagentaOpacity);
+
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+}
+.card-container {
+  gap: 1rem;
+}
+.profile-card--info {
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.card-img {
+  border-radius: 50%;
+  max-width: 3em;
+}
+.user-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.starts {
+  gap: 0.5rem;
+  justify-content: center;
+}
+
 /* gernal card */
 .profile-card {
   background-color: var(--VeryDarkMagenta);
   color: var(--DarkGrayishMagenta);
   padding: 2rem;
   border-radius: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .social-row--desc {
+    text-align: left;
+  }
+  .social-content,
+  .card-container {
+    flex-direction: row;
+  }
+  .social-content > * {
+    flex-basis: 50%;
+  }
+}
+@media (min-width: 768px) {
+  .wraper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .social-container {
+    max-width: 65em;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+  .title {
+    max-width: 300px;
+  }
+  .desc {
+    max-width: 391px;
+    margin-bottom: 20px;
+  }
+  .rating {
+    margin: 0%;
+  }
+  .rating > *:nth-child(1) {
+    margin-right: 6rem;
+  }
+  .rating > *:nth-child(2) {
+    margin-right: 3rem;
+  }
+
+  .rating-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 20px;
+  }
+
+  .card-container > *:nth-child(2) {
+    margin-top: 2rem;
+  }
+
+  .card-container > *:nth-child(3) {
+    margin-top: 3rem;
+  }
 }
