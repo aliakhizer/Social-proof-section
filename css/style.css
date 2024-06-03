@@ -26,6 +26,9 @@ body {
 .social-row {
   flex-direction: column;
 }
+.social-row--desc {
+  text-align: center;
+}
 /* typography */
 .title {
   font-size: 2.75rem;
@@ -35,6 +38,9 @@ body {
 .rating-item--text {
   color: var(--VeryDarkMagenta);
   font-weight: 700;
+}
+.user-profile-desc {
+  color: white;
 }
 .desc {
   line-height: 1.3rem;
@@ -50,9 +56,7 @@ body {
 .social-container {
   margin: 4rem 1.5rem;
 }
-.social-row--desc {
-  text-align: center;
-}
+
 .rating {
   text-align: center;
   margin: 2rem 0;
@@ -75,7 +79,7 @@ body {
   gap: 1rem;
   margin-bottom: 1.5rem;
 }
-.profile-card--info img {
+.card-img {
   border-radius: 50%;
   max-width: 3em;
 }
@@ -96,4 +100,62 @@ body {
   color: var(--DarkGrayishMagenta);
   padding: 2rem;
   border-radius: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .social-row--desc {
+    text-align: left;
+  }
+  .social-content,
+  .card-container {
+    flex-direction: row;
+  }
+  .social-content > * {
+    flex-basis: 50%;
+  }
+}
+@media (min-width: 768px) {
+  .wraper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .social-container {
+    max-width: 65em;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+  .title {
+    max-width: 300px;
+  }
+  .desc {
+    max-width: 391px;
+    margin-bottom: 20px;
+  }
+  .rating {
+    margin: 0%;
+  }
+  .rating > *:nth-child(1) {
+    margin-right: 6rem;
+  }
+  .rating > *:nth-child(2) {
+    margin-right: 3rem;
+  }
+
+  .rating-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 20px;
+  }
+
+  .card-container > *:nth-child(2) {
+    margin-top: 2rem;
+  }
+
+  .card-container > *:nth-child(3) {
+    margin-top: 3rem;
+  }
 }
